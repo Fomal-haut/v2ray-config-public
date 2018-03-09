@@ -1,0 +1,44 @@
+{
+  "inbound": {
+    "protocol": "vmess",
+    "port": 8625,
+    "settings": {
+      "clients": [
+        {
+          "id": "(uuid)",
+          "level": 1,
+          "alterId": 64,
+          "email": "(email)"
+        }
+      ]
+    },
+    "detour": {
+      "to": "detour"
+    },
+    "tag": "major"
+  },
+  "inboundDetour": [
+    {
+      "protocol": "vmess",
+      "port": "8630-8699",
+      "settings": {
+        "default": {
+          "level": 1,
+          "alterId": 64
+        }
+      },
+      "allocate": {
+        "strategy": "random",
+        "concurrency": 5,
+        "refresh": 5
+      },
+      "tag": "detour"
+    }
+  ],
+  "outbound": {
+    "protocol": "freedom",
+    "settings": {
+      "timeout": 600
+    }
+  }
+}
