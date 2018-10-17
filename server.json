@@ -1,7 +1,7 @@
 {
   "inbound": {
     "protocol": "vmess",
-    "port": 8625,
+    "port": 1108,
     "settings": {
       "clients": [
         {
@@ -12,29 +12,15 @@
         }
       ]
     },
-    "detour": {
-      "to": "detour"
+    "streamSettings": {
+      "network": "ws",
+      "wsSettings": {
+        "path": "/sunshine"
+      }
     },
+    "disableInsecureEncryption": true,
     "tag": "major"
   },
-  "inboundDetour": [
-    {
-      "protocol": "vmess",
-      "port": "8630-8699",
-      "settings": {
-        "default": {
-          "level": 1,
-          "alterId": 64
-        }
-      },
-      "allocate": {
-        "strategy": "random",
-        "concurrency": 5,
-        "refresh": 5
-      },
-      "tag": "detour"
-    }
-  ],
   "outbound": {
     "protocol": "freedom",
     "settings": {

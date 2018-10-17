@@ -1,2 +1,3 @@
 #!/bin/sh
-docker run -i -d --rm -p "8600-8699:8600-8699" -v `pwd`/server.json:/etc/v2ray/config.json v2ray/official
+docker run --rm -d -e "CADDYPATH=/etc/caddycerts" -v $HOME/.caddy:/etc/caddycerts -v `pwd`/Caddyfile:/etc/Caddyfile -v `pwd`/wwwroot:/wwwroot -p 80:80 -p 443:443 abiosoft/caddy
+docker run --rm -d -v `pwd`/server.json:/etc/v2ray/config.json -p 1108:1108 v2ray/official

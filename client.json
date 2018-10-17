@@ -1,10 +1,11 @@
 {
   "inbound": {
     "port": 1080,
+    "domainOverride": ["http", "tls"],
     "protocol": "socks",
     "settings": {
       "auth": "noauth",
-      "udp": true
+      "udp": false
     }
   },
   "outbound": {
@@ -12,17 +13,27 @@
     "settings": {
       "vnext": [
         {
-          "address": "(server-ip)",
-          "port": 8625,
+          "address": "(server-domain-name)",
+          "port": 443,
           "users": [
             {
               "id": "(uuid)",
               "alterId": 64,
-              "security": "chacha20-poly1305"
+              "security": "auto"
             }
           ]
         }
       ]
+    },
+    "streamSettings": {
+      "network": "ws",
+      "security": "tls",
+      "tlsSettings": {
+        "serverName": "(server-domain-name)"
+      },
+      "wsSettings": {
+        "path": "/sunshine"
+      }
     },
     "tag": "vmess"
   },
