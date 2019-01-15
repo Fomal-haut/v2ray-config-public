@@ -13,11 +13,11 @@
     "settings": {
       "vnext": [
         {
-          "address": "(server-domain-name)",
+          "address": "%server-domain-name%",
           "port": 443,
           "users": [
             {
-              "id": "(uuid)",
+              "id": "%uuid%",
               "alterId": 64,
               "security": "auto"
             }

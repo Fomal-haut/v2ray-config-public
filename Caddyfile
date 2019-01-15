@@ -1,8 +1,8 @@
-oxyjiang.com {
+%server-domain-name% {
   gzip
   root /wwwroot
-  tls (email)
-  proxy /sunshine (server-ip):1108 {
+  tls %user-email%
+  proxy /sunshine %server-ip%:1108 {
     websocket
     header_upstream -Origin
   }
