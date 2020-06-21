@@ -1,8 +1,8 @@
-%server-domain-name% {
+hellozhufeng.me {
   gzip
   root /wwwroot
-  tls %user-email%
-  proxy /sunshine %server-ip%:1108 {
+  tls zflsy8188@gmail.com
+  proxy /sunshine 172.96.223.21:1108 {
     websocket
     header_upstream -Origin
   }

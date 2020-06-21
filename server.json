@@ -5,10 +5,10 @@
     "settings": {
       "clients": [
         {
-          "id": "%uuid%",
+          "id": "be06436a-38af-41f5-9d09-e26c378fcf86",
           "level": 1,
           "alterId": 64,
-          "email": "%user-email%"
+          "email": "zflsy8188@gmail.com"
         }
       ]
     },
